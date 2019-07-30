@@ -11,9 +11,9 @@ spring:
         default-property-inclusion: non_null
     datasource:
         name: test
-        url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ag_admin_v1?useUnicode=true&characterEncoding=UTF8
+        url: jdbc:mysql://localhost:3306/ag_admin_v1?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
         username: root
-        password: 123456QWE
+        password: root
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -30,7 +30,7 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
-#    rabbitmq:
+#    rabbitmq:  13901762090
 #        host: ${RABBIT_MQ_HOST:localhost}
 #        port:  ${RABBIT_MQ_PORT:5672}
 #        username: guest
@@ -115,8 +115,8 @@ redis:
          maxActive: 300
          maxIdle: 100
          maxWait: 1000
-    host: ${REDIS_HOST:localhost}
-    port:  ${REDIS_PORT:6379}
+    host: localhost
+    port:  6379
     password:
     timeout: 2000
     # 服务或应用名
